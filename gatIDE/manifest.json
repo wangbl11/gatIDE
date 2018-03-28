@@ -1,0 +1,36 @@
+{
+
+  "manifest_version": 2,
+  "name": "GatIDE",
+  "version": "1.0",
+  "homepage_url":"https://github.com/wangbl11/gatIDE",
+  "description": "Oracle GAT IDE to record script",
+  "icons": {
+    "48": "icons/builder-logo-small.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "webRequest",
+    "<all_urls>"
+  ],
+  "applications": {
+    "gecko": {
+      "id": "gatIDE@oracle.com"
+    }
+  },
+  "background": {
+     "scripts": ["content/seleniumbuilder3.js","content/b/i18n/translate.js","content/b/i18n/en.js","content/b/utils.js","content/b/io.js","content/b/url.js","content/b/script.js","content/b/loadlistener.js","content/b/pagestate.js","content/b/selenium2/selenium2.js","content/b/selenium2/io/io.js","content/savescript.js"]
+  },
+  "content_scripts": [
+  {
+    "matches": ["*://*.mozilla.org/*"],
+    "js": ["content/html/lib/jquery-3.1.0.min.js","content/html/lib/jquery.csv-0.71.min.js","content/html/lib/cssQuery-noeval.js","content/b/loadlistener.js","content/b/i18n/translate.js","content/b/i18n/en.js","content/b/utils.js","content/b/gatprefs.js","content/b/script.js","content/b/selenium2/selenium2.js","content/b/selenium2/io/io.js","content/b/selenium2/io/formats/json.js","content/b/locator.js","content/b/selenium2/recorder.js","content/b/record.js","gatide.js"]
+  }
+  ],
+  "browser_action": {
+    "default_icon": "icons/sb_logo_med.png",
+    "default_title": "gatIDE"
+  }
+}
